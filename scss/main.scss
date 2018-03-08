@@ -181,6 +181,7 @@ body * {
       display: -webkit-flex;
       display: flex;
       align-items: center;
+      -webkit-flex-flow: row wrap;
 
       .usercounts__item {
         display: table-cell;

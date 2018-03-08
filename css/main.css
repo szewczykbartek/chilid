@@ -162,6 +162,7 @@ body * {
   display: -webkit-flex;
   display: flex;
   align-items: center;
+  -webkit-flex-flow: row wrap;
 }
 .widget .header .usercounts__wrapper .usercounts__item {
   display: table-cell;
