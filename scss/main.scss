@@ -77,6 +77,7 @@ body * {
   }
   //
   // Header
+  //
   .header {
     padding-top: 35px;
 
@@ -92,6 +93,18 @@ body * {
       position: absolute;
       top: 0;
       z-index: 0;
+    }
+
+    .permalink {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: $color__orange;
+      cursor: pointer;
+    }
+
+    .permalink:hover {
+      color: $color__orange__hover;
     }
     //
     // User info
@@ -151,10 +164,12 @@ body * {
         color: #002C71;
       }
 
+      .userinfo__name .userinfo__like.active svg:nth-child(1),
       .userinfo__name .userinfo__like:hover svg:nth-child(1) {
         display: none;
       }
 
+      .userinfo__name .userinfo__like.active svg:nth-child(2),
       .userinfo__name .userinfo__like:hover svg:nth-child(2) {
         display: inline-block;
       }
@@ -199,6 +214,16 @@ body * {
         letter-spacing: 4.2px;
         text-transform: uppercase;
         cursor: pointer;
+      }
+
+      button::before {
+        content: 'Follow';
+      }
+      button.active {
+        background: $color__orange__hover;
+      }
+      button.active::before {
+        content: 'unfollow';
       }
 
       button:hover {

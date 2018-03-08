@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { getCounter } from '../xhr'
-import { getCounterUpdate } from '../xhr'
 
 import User from '../components/User'
 import Comments from '../components/Comments'

@@ -6,19 +6,15 @@ import { getComments } from '../xhr'
 
 class Comments extends React.Component {
     constructor (props) {
-      //super(props);
-      super();
+      super(props);
       this.state = {
         comments: []
-        //comments: {id: "0", name: "", text: ""}
       }
     }
 
 
   componentDidMount() {
-    console.log( this.state.comments.length );
     getComments().then(results => {
-      console.log(results.data);
       this.setState({
         comments: results.data
       })

@@ -55,7 +55,18 @@ body * {
 }
 .widget .widget__part1 {
   box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
-  border-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .widget .header {
   padding-top: 35px;
@@ -82,6 +93,16 @@ body * {
   position: absolute;
   top: 0;
   z-index: 0;
+}
+.widget .header .permalink {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #FFA640;
+  cursor: pointer;
+}
+.widget .header .permalink:hover {
+  color: #ea9737;
 }
 .widget .header .userinfo__wrapper {
   display: -webkit-flex;
@@ -129,9 +150,11 @@ body * {
 .widget .header .userinfo__wrapper .userinfo__name .userinfo__like:hover {
   color: #002C71;
 }
+.widget .header .userinfo__wrapper .userinfo__name .userinfo__like.active svg:nth-child(1),
 .widget .header .userinfo__wrapper .userinfo__name .userinfo__like:hover svg:nth-child(1) {
   display: none;
 }
+.widget .header .userinfo__wrapper .userinfo__name .userinfo__like.active svg:nth-child(2),
 .widget .header .userinfo__wrapper .userinfo__name .userinfo__like:hover svg:nth-child(2) {
   display: inline-block;
 }
@@ -168,6 +191,15 @@ body * {
   letter-spacing: 4.2px;
   text-transform: uppercase;
   cursor: pointer;
+}
+.widget .header .usercounts__wrapper button::before {
+  content: 'Follow';
+}
+.widget .header .usercounts__wrapper button.active {
+  background: #ea9737;
+}
+.widget .header .usercounts__wrapper button.active::before {
+  content: 'unfollow';
 }
 .widget .header .usercounts__wrapper button:hover {
   background: #ea9737;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn React</title>
+  <title>Chilid :: widget</title>
   <link rel="stylesheet" href="css/main.css?<?php echo date('U'); ?>">
 </head>
 <body>
