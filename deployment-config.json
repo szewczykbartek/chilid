@@ -1,0 +1,9 @@
+{
+    "type": "ftp",
+    "host": "siteground244.com",
+    "username": "paraboli",
+    "password": "zedisdead",
+    "port": 21,
+    "remotePath": "/public_html/hypotheticalpeople.com/chilid",
+    "uploadOnSave": true
+}
