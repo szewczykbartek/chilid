@@ -39,7 +39,7 @@ body * {
 
 .widget {
   width: 500px;
-  margin: 0 auto;
+  margin: 50px auto;
   position: relative;
 }
 .widget .box {
@@ -55,18 +55,6 @@ body * {
 }
 .widget .widget__part1 {
   box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.5);
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 .widget .header {
   padding-top: 35px;
@@ -93,6 +81,18 @@ body * {
   position: absolute;
   top: 0;
   z-index: 0;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .widget .header .permalink {
   position: absolute;
@@ -109,6 +109,7 @@ body * {
   display: flex;
   margin-bottom: 25px;
   align-items: center;
+  -webkit-flex-flow: row wrap;
 }
 .widget .header .userinfo__wrapper .userinfo__photo {
   padding-right: 20px;
@@ -119,6 +120,7 @@ body * {
   border-radius: 70px;
   background: url("../img/Photo.jpg") center center;
   background-size: cover;
+  margin: 0 auto;
 }
 .widget .header .userinfo__wrapper .userinfo__name div:nth-child(1) {
   font-size: 18px;
@@ -316,6 +318,33 @@ body * {
   color: #8298B9;
 }
 
+@media screen and (max-width: 700px) {
+  .widget {
+    width: 300px;
+  }
+  .widget .header .userinfo__wrapper {
+    margin-top: -60px;
+  }
+  .widget .header .userinfo__wrapper .userinfo__photo {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .widget .header .userinfo__wrapper .userinfo__name {
+    width: 100%;
+    text-align: center;
+  }
+  .widget .usercounts__wrapper .usercounts__item {
+    width: 33.333%;
+  }
+  .widget .usercounts__wrapper .usercounts__item:nth-child(4) {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .widget .comments__list .comment__hidecomments {
+    text-align: center;
+  }
+}
 @-webkit-keyframes anim_comment_new {
   0% {
     background: #fff;

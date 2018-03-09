@@ -56,7 +56,7 @@ body * {
 
 .widget {
   width: 500px;
-  margin: 0 auto;
+  margin: 50px auto;
   position: relative;
 
   .box {
@@ -73,7 +73,6 @@ body * {
 
   .widget__part1 {
     box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.50);
-    @include border-radius(5px, 5px, 5px, 5px);
   }
   //
   // Header
@@ -93,6 +92,7 @@ body * {
       position: absolute;
       top: 0;
       z-index: 0;
+      @include border-radius(5px, 5px, 0px, 0px);
     }
 
     .permalink {
@@ -114,6 +114,7 @@ body * {
       display: flex;
       margin-bottom: 25px;
       align-items: center;
+      -webkit-flex-flow: row wrap;
 
       .userinfo__photo {
         padding-right: 20px;
@@ -125,6 +126,7 @@ body * {
         border-radius: 70px;
         background: url('../img/Photo.jpg') center center;
         background-size: cover;
+        margin: 0 auto;
       }
 
       .userinfo__name div:nth-child(1) {
@@ -220,9 +222,11 @@ body * {
       button::before {
         content: 'Follow';
       }
+
       button.active {
         background: $color__orange__hover;
       }
+
       button.active::before {
         content: 'unfollow';
       }
@@ -351,6 +355,47 @@ body * {
     }
   }
 }
+//
+// Media
+//
+@media screen and (max-width: 700px) {
+  .widget {
+    width: 300px;
+
+    .header .userinfo__wrapper {
+      margin-top: -60px;
+
+      .userinfo__photo {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+
+      .userinfo__name {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .usercounts__wrapper {
+      .usercounts__item {
+        width: 33.333%;
+      }
+
+      .usercounts__item:nth-child(4) {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .comments__list .comment__hidecomments {
+      text-align: center;
+    }
+  }
+}
+//
+// Anim
+//
 @-webkit-keyframes anim_comment_new {
   0% {
     background: #fff;
