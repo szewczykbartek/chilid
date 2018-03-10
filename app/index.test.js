@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import User from './components/User'
 import Comments from './components/Comments'
 import Comment from './components/Comment'
 import CommentsAdd from './components/CommentsAdd'
@@ -13,6 +14,11 @@ global.render = render;
 global.mount = mount;
 
 describe('Addition', () => {
+  it('exist component User', () => {
+    let wrapperUser = shallow(<User />);
+    expect(wrapperUser.exists()).toEqual(true);
+    expect(wrapperUser.find('.userinfo__wrapper')).toHaveLength(1);
+  })
   it('exist component Comments', () => {
     let wrapperComments = shallow(<Comments />);
     expect(wrapperComments.exists()).toEqual(true);

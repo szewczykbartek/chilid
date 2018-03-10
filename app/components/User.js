@@ -111,7 +111,6 @@ class User extends React.Component {
       </div>
     )
   }
-
 }
 
 export default User
