@@ -9,6 +9,7 @@ class User extends React.Component {
       counter_likes: 0,
       counter_followers: 0
     }
+    this.CountSql = this.CountSql.bind(this);
   }
 
   componentDidMount() {
@@ -19,37 +20,55 @@ class User extends React.Component {
     })
   }
 
+  CountSql(system, method) {
+    getCounterUpdate(system, method).then(results => {
+      if(results.data.status == 'ok'){
+        this.setState({[results.data.system]: results.data.count});
+      }
+    })
+  }
+
   handleCountFollowers = (e) => {
+    let method;
     document.getElementById('actFollow').classList.toggle('active');
     if (document.getElementById('actFollow').classList.contains('active')) {
+      method = 'plus';
       this.setState((prevState) => {
         return {counter_followers: Number(prevState.counter_followers) + 1};
       });
+
     }else{
+      method = 'minus';
       this.setState((prevState) => {
         return {counter_followers: Number(prevState.counter_followers) - 1};
       });
     }
 
-    // SQL method
-    // getCounterUpdate('followers', 4).then(results => {
-    //   if(results.data.status == 'ok'){
-    //     console.log('+++');
-    //   }
-    // })
+    // SQL refresh
+    getCounterUpdate('followers', method).then(results => {
+      if(results.data.status == 'ok'){
+        this.setState({counter_followers: results.data.count});
+      }
+    })
   }
 
   handleCountLikes = (e) => {
+    let method;
     document.getElementById('actLikes').classList.toggle('active');
     if (document.getElementById('actLikes').classList.contains('active')) {
+      method = 'plus';
       this.setState((prevState) => {
         return {counter_likes: Number(prevState.counter_likes) + 1};
       });
     }else{
+      method = 'minus';
       this.setState((prevState) => {
         return {counter_likes: Number(prevState.counter_likes) - 1};
       });
     }
+
+    // to Sql
+    this.CountSql('likes',method);
   }
 
   handlePermalink = (e) => {
@@ -78,7 +97,7 @@ class User extends React.Component {
                 </svg>
               </a>
             </div>
-            <div>Rybnik, Polska.</div>
+            <div>Rybnik, Polska</div>
           </div>
         </div>
         <div className="usercounts__wrapper">

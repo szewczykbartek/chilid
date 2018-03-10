@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import Comment from './Comment'
 import { getComments } from '../xhr'
 
-
-
 class Comments extends React.Component {
-    constructor (props) {
-      super(props);
-      this.state = {
-        comments: []
-      }
+  constructor (props) {
+    super(props);
+    this.state = {
+      comments: []
     }
-
+  }
 
   componentDidMount() {
     getComments().then(results => {

@@ -12,8 +12,8 @@ let getCounter = function() {
   return axios.get('http://chilid.hypotheticalpeople.com/api/counter_list.php')
 }
 
-let getCounterUpdate = function(system, action) {
-  return axios.get('http://chilid.hypotheticalpeople.com/api/counter_update.php?system=' + system + '&action=' + action)
+let getCounterUpdate = function(system, method) {
+  return axios.get('http://chilid.hypotheticalpeople.com/api/counter_update.php?system=' + system + '&method=' + method)
 }
 
 export { getComments, getCommentsAdd, getCounter, getCounterUpdate }

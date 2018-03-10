@@ -1,9 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { Component } from 'react';
 
 let Comment = function(props) {
   return (
-    <li className="comment__wrapper" data-id="">
+    <li className="comment__wrapper">
       <div className="comment__photo"><div className="comment__photo__img"></div></div>
       <div className="comment__data">
         <div className="comment__author">{props.name}</div>
